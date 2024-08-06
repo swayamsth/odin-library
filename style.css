@@ -80,10 +80,20 @@ header{
 
 .links > ul {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
 li > a, .btn{
+    color: var(--midnight);
     font-family: var(--ff-inter);
     font-size: var(--fs-xs);
+}
+
+.btn{
+    color: white;
+    background-color: var(--olive);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
 }
