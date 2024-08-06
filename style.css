@@ -3,11 +3,10 @@
 :root{
 
     /* colors */
-    --terracota: #935727;
-    --creme: #CFC4B1;
+    --rogue: #c86d5f;
+    --pigsear: #eecebf;
+    --creme: #f7f0e6;
     --midnight: #141414;
-    --olive: #676127;
-    --rust: #803407;
 
 
     /* typography */
@@ -61,6 +60,7 @@ li{
 
 a{
     text-decoration: none;
+    transition: var(--transition);
 }
 
 /* HEADER */
@@ -71,9 +71,11 @@ header{
     align-items: center;
     margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 10px;
 }
 
 .logo{
+    cursor: default;
     font-size: var(--fs-lg);
     font-weight: var(--fw-600);
 }
@@ -88,12 +90,71 @@ li > a, .btn{
     color: var(--midnight);
     font-family: var(--ff-inter);
     font-size: var(--fs-xs);
+    font-weight: var(--fw-500);
+}
+
+li{
+    transition: var(--transition);
+}
+
+li:hover{
+    transform: scale(1.1);
+}
+
+a:hover{
+    color: var(--rogue);
 }
 
 .btn{
-    color: white;
-    background-color: var(--olive);
-    padding: 10px 30px;
-    border: none;
+    position: relative;
+    width: 100px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border: 1px solid var(--midnight);
     border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn > span{
+    background: var(--rogue);
+    height: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: var(--transition);
+
+}
+
+.btn:hover > span{
+    height: 100%;
+}
+
+hr{
+    margin: auto;
+    width: 98%;
+    background-color: var(--midnight);
+    height: 1px;
+    border: 0;
+    margin-bottom: 10px;
+}
+
+/* MAIN */
+
+.reading{
+    font-size: var(--fs-xl);
+    font-family: var(--ff-inter);
+    margin-left: 30px;
+    font-weight: var(--fw-600);
+}
+
+.new-book-container{
+    margin-left: 30px;
+    width: 250px;
+    height: 250px;
+    border: 1px solid grey;
 }
