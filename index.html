@@ -27,19 +27,23 @@
             <div class="reading">Current Readings</div>
             <div class="new-book-container">
                 <dialog id="favDialog">
-                    <form method="dialog">
+                    <form method="dialog" class="modal">
                       <p>
                         <label for="bookTitle">
                           Book Title:
-                          <input type="text" id="bookTitle">
-                        </label>
+                          <input type="text" id="bookTitle" name="bookTitle">
+                        </label><br>
                         <label for="bookAuthor">
                             Book Author:
-                            <input type="text" id="bookAuthor">
-                        </label>
+                            <input type="text" id="bookAuthor" name="bookAuthor">
+                        </label><br>
                         <label for="bookPages">
                             Pages:
-                            <input type="number" id="bookPages">
+                            <input type="number" id="bookPages" name="bookPages">
+                        </label><br>
+                        <label for="hasRead">
+                            Have you read it?
+                            <input id="hasRead" name="hasRead" value="false">
                         </label>
                       </p>
 
@@ -54,8 +58,6 @@
                   <p>
                     <button id="showDialog">Add Book</button>
                   </p>
-
-                  <output></output>
             </div>
         </div>
     </body>
