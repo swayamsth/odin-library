@@ -7,15 +7,11 @@ function Book(title, author, pages, hasRead = false) {
   this.read = hasRead;
 }
 
-function addBookToLibrary() {
-  let title = "Sixty Shades of Coding";
-  let author = "Johhny";
-  let pages = "245";
-  let hasRead = true;
+function addBookToLibrary(bookObject) {
+  
+
   myLibrary.push(new Book(title, author, pages, hasRead));
 }
-
-addBookToLibrary();
 
 function loopArray(){
   const main = document.querySelector(".main");
@@ -41,7 +37,6 @@ loopArray();
 
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
-const outputBox = document.querySelector("output");
 const confirmBtn = favDialog.querySelector("#confirmBtn");
 
 showButton.addEventListener("click", () => {
@@ -50,5 +45,12 @@ showButton.addEventListener("click", () => {
 
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  favDialog.close();
+
+  let bookObject = Array.from(document.querySelectorAll(".modal input")).reduce((acc, input) => ({
+    ...acc, [input.id]: input.value}), {});
+
+  favDialog.close(bookObject);
 });
+
+let bookValues = Object.values(bookObject);
+  console.log(bookValues);
