@@ -152,9 +152,15 @@ hr{
     font-weight: var(--fw-600);
 }
 
-.new-book-container{
-    margin-left: 30px;
-    width: 250px;
-    height: 250px;
-    border: 1px solid grey;
+
+/* DIALOG */
+
+dialog{
+    margin: auto;
+}
+
+.modal{
+    padding: 1rem;
+    max-width: 50ch;
+    text-align: end;
 }
