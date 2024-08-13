@@ -25,7 +25,38 @@
         <hr>
         <div class="main">
             <div class="reading">Current Readings</div>
-            <div class="new-book-container"></div>
+            <div class="new-book-container">
+                <dialog id="favDialog">
+                    <form method="dialog">
+                      <p>
+                        <label for="bookTitle">
+                          Book Title:
+                          <input type="text" id="bookTitle">
+                        </label>
+                        <label for="bookAuthor">
+                            Book Author:
+                            <input type="text" id="bookAuthor">
+                        </label>
+                        <label for="bookPages">
+                            Pages:
+                            <input type="number" id="bookPages">
+                        </label>
+                      </p>
+
+                      <div>
+                        <button type="submit" value="cancel" formmethod="dialog">Cancel</button>
+                        <button id="confirmBtn" value="default">Confirm</button>  
+                      </div>
+
+                    </form>
+                  </dialog>
+
+                  <p>
+                    <button id="showDialog">Add Book</button>
+                  </p>
+
+                  <output></output>
+            </div>
         </div>
     </body>
 </html>

@@ -16,8 +16,6 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
-addBookToLibrary();
-console.log(myLibrary[0]);
 
 function loopArray(){
   const main = document.querySelector(".main");
@@ -40,3 +38,17 @@ function loopArray(){
 }
 
 loopArray();
+
+const showButton = document.getElementById("showDialog");
+const favDialog = document.getElementById("favDialog");
+const outputBox = document.querySelector("output");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
+
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
+
+confirmBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  favDialog.close();
+});
