@@ -16,4 +16,27 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
-console.log(myLibrary);
+addBookToLibrary();
+console.log(myLibrary[0]);
+
+function loopArray(){
+  const main = document.querySelector(".main");
+  
+  for (let i = 0; i < myLibrary.length; i++){
+    const bookCard = document.createElement("div");
+    let title = document.createElement("h2");
+    let author = document.createElement("p");
+    let pages = document.createElement("p");
+
+    title.textContent = myLibrary[i].title;
+    author.textContent = myLibrary[i].author;
+    pages.textContent = myLibrary[i].pages;
+
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pages);
+    main.appendChild(bookCard);
+  }
+}
+
+loopArray();
