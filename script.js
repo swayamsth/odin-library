@@ -8,9 +8,14 @@ function Book(title, author, pages, hasRead = false) {
 }
 
 function addBookToLibrary(bookObject) {
-  
-
-  myLibrary.push(new Book(title, author, pages, hasRead));
+  const newBook = new Book(
+    bookObject.bookTitle,
+    bookObject.bookAuthor,
+    bookObject.bookPages,
+    bookObject.hasRead
+  );
+  myLibrary.push(newBook);
+  loopArray();
 }
 
 function loopArray(){
@@ -47,10 +52,9 @@ confirmBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
   let bookObject = Array.from(document.querySelectorAll(".modal input")).reduce((acc, input) => ({
-    ...acc, [input.id]: input.value}), {});
+    ...acc, [input.id]: input.value
+  }), {});
 
-  favDialog.close(bookObject);
+  addBookToLibrary(bookObject);
+  favDialog.close();
 });
-
-let bookValues = Object.values(bookObject);
-  console.log(bookValues);
