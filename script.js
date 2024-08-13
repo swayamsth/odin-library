@@ -4,7 +4,7 @@ function Book(title, author, pages, hasRead = false) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = hasRead;
+  this.read = Boolean(hasRead);
 }
 
 function addBookToLibrary(bookObject) {
@@ -21,19 +21,22 @@ function addBookToLibrary(bookObject) {
 function loopArray(){
   const main = document.querySelector(".main");
   
-  for (let i = 0; i < myLibrary.length; i++){
+  for (let i = 0; i < myLibrary.length; i++) {
     const bookCard = document.createElement("div");
     let title = document.createElement("h2");
     let author = document.createElement("p");
     let pages = document.createElement("p");
+    let readStatus = document.createElement("p");
 
     title.textContent = myLibrary[i].title;
-    author.textContent = myLibrary[i].author;
-    pages.textContent = myLibrary[i].pages;
+    author.textContent = `Author: ${myLibrary[i].author}`;
+    pages.textContent = `Pages: ${myLibrary[i].pages}`;
+    readStatus.textContent = myLibrary[i].read ? 'Read' : 'Not Read';
 
     bookCard.appendChild(title);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
+    bookCard.appendChild(readStatus);
     main.appendChild(bookCard);
   }
 }
@@ -51,10 +54,19 @@ showButton.addEventListener("click", () => {
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
-  let bookObject = Array.from(document.querySelectorAll(".modal input")).reduce((acc, input) => ({
-    ...acc, [input.id]: input.value
-  }), {});
+  let bookObject = Array.from(document.querySelectorAll(".modal input")).reduce((acc, input) => {
+    if (input.type === "checkbox") {
+      acc[input.id] = input.checked;
+    } else {
+      acc[input.id] = input.value;
+    }
+    return acc;
+  }, {});
 
   addBookToLibrary(bookObject);
+
+  const form = document.querySelector(".modal");
+  form.reset();
+
   favDialog.close();
 });
