@@ -19,7 +19,8 @@ function addBookToLibrary(bookObject) {
 }
 
 function loopArray(){
-  const main = document.querySelector(".main");
+  const books = document.querySelector(".books");
+  books.innerHTML = "";
   
   for (let i = 0; i < myLibrary.length; i++) {
     const bookCard = document.createElement("div");
@@ -37,7 +38,7 @@ function loopArray(){
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
     bookCard.appendChild(readStatus);
-    main.appendChild(bookCard);
+    books.appendChild(bookCard);
   }
 }
 
