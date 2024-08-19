@@ -27,7 +27,7 @@ function loopArray(){
     let title = document.createElement("h2");
     let author = document.createElement("p");
     let pages = document.createElement("p");
-    let readStatus = document.createElement("p");
+    let readStatus = document.createElement("button");
     let deleteButton = document.createElement("button");
 
     title.textContent = myLibrary[i].title;
@@ -38,6 +38,17 @@ function loopArray(){
 
     deleteButton.addEventListener('click', () => {
       removeBook(myLibrary[i]);
+    })
+
+    readStatus.addEventListener('click', (e) => {
+      let status = e.target.textContent;
+      if (status === 'Read'){
+        myLibrary[i].read = false;
+        readStatus.textContent = 'Not Read';
+      } else if (status === 'Not Read'){
+        myLibrary[i].read = true;
+        readStatus.textContent = 'Read';
+      }
     })
 
     bookCard.appendChild(title);
