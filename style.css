@@ -157,6 +157,27 @@ hr{
 
 dialog{
     margin: auto;
+    background-color: var(--creme);
+    border-radius: 10px;
+}
+
+label{
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-600);
+}
+
+input{
+    background-color: white;
+    outline: none;
+    padding: 7px;
+}
+
+.modal > div > button{
+    cursor: pointer;
+    background: white;
+    border: 1px solid black;
+    font-weight: var(--fw-600);
+    padding: 10px 25px;
 }
 
 .modal{
