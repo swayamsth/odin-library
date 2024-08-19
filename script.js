@@ -30,6 +30,9 @@ function loopArray(){
     let readStatus = document.createElement("button");
     let deleteButton = document.createElement("button");
 
+    readStatus.classList.add("bookCardBtn")
+    deleteButton.classList.add("deleteCardBtn")
+
     title.textContent = myLibrary[i].title;
     author.textContent = `Author: ${myLibrary[i].author}`;
     pages.textContent = `Pages: ${myLibrary[i].pages}`;
@@ -56,6 +59,7 @@ function loopArray(){
     bookCard.appendChild(pages);
     bookCard.appendChild(readStatus);
     bookCard.appendChild(deleteButton);
+    bookCard.classList.add("bookCardContent");
     books.appendChild(bookCard);
   }
 }
