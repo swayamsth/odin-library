@@ -193,6 +193,7 @@ dialog{
 .bookCardContent{
     border: 1px solid var(--midnight);
     max-width: 300px;
+    min-width: 200px;
     text-align: center;
     padding: 10px 10px;
     display: inline-flex;
@@ -207,5 +208,4 @@ dialog{
     border: none;
     font-weight: var(--fw-600);
     padding: 20px 50px;
-    transition: var(--transition);
 }
