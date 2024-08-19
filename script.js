@@ -39,6 +39,12 @@ function loopArray(){
     readStatus.textContent = myLibrary[i].read ? 'Read' : 'Not Read';
     deleteButton.textContent = "Remove";
 
+    if (readStatus.textContent === 'Read'){
+      readStatus.style.color = 'green';
+    } else if (readStatus.textContent === 'Not Read'){
+      readStatus.style.color = 'red';
+    }
+
     deleteButton.addEventListener('click', () => {
       removeBook(myLibrary[i]);
     })
@@ -48,9 +54,11 @@ function loopArray(){
       if (status === 'Read'){
         myLibrary[i].read = false;
         readStatus.textContent = 'Not Read';
+        readStatus.style.color = 'red';
       } else if (status === 'Not Read'){
         myLibrary[i].read = true;
         readStatus.textContent = 'Read';
+        readStatus.style.color = 'green';
       }
     })
 
