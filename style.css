@@ -164,3 +164,48 @@ dialog{
     max-width: 50ch;
     text-align: end;
 }
+
+.addBookBtn{
+    cursor: pointer;
+    border: 1px solid black;
+    background: none;
+    font-weight: var(--fw-600);
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 15px 20px;
+    transition: var(--transition);
+}
+
+.addBookBtn:hover{
+    transform: scale(1.05);
+    color: var(--creme);
+    background-color: var(--midnight);
+}
+
+.books{
+    margin-left: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.bookCardContent{
+    border: 1px solid var(--midnight);
+    max-width: 300px;
+    text-align: center;
+    padding: 10px 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bookCardBtn, .deleteCardBtn{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: var(--fw-600);
+    padding: 20px 50px;
+    transition: var(--transition);
+}
