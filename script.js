@@ -28,21 +28,33 @@ function loopArray(){
     let author = document.createElement("p");
     let pages = document.createElement("p");
     let readStatus = document.createElement("p");
+    let deleteButton = document.createElement("button");
 
     title.textContent = myLibrary[i].title;
     author.textContent = `Author: ${myLibrary[i].author}`;
     pages.textContent = `Pages: ${myLibrary[i].pages}`;
     readStatus.textContent = myLibrary[i].read ? 'Read' : 'Not Read';
+    deleteButton.textContent = "Remove";
+
+    deleteButton.addEventListener('click', () => {
+      removeBook(myLibrary[i]);
+    })
 
     bookCard.appendChild(title);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
     bookCard.appendChild(readStatus);
+    bookCard.appendChild(deleteButton);
     books.appendChild(bookCard);
   }
 }
 
 loopArray();
+
+function removeBook(index){
+  myLibrary.splice(index, 1);
+  loopArray();
+}
 
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
